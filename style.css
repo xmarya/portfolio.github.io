@@ -1,0 +1,575 @@
+:root {
+  --html: #ff5900;
+  --sass: #ff0051;
+  --javascript: #ffe600;
+  --node: #0ac507;
+  --bittersweet: #ff595e;
+  --sunglow: #ffca3a;
+  --yellow-green: #8ac926;
+  --steel-blue: #1982c4;
+  --ultra-violet: #6a4c93;
+  --text: #e7ecef;
+
+  --font-dela: "Dela Gothic One", cursive; /*400*/
+  --font-josefin: "Josefin Sans", sans-serif; /*300 - 700*/
+  --font-mooli: "Mooli", sans-serif; /*400*/
+  --font-poppins: "Poppins", sans-serif; /*400 - 900 nice for paragraphes, it's easy to read*/
+  --font-verela: "Varela Round", sans-serif; /*400 nice for paragraphes*/
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--text);
+  overflow-x: hidden;
+}
+
+h2,
+h3 {
+  font-size: 4.6rem;
+  font-family: var(--font-dela);
+  text-align: center;
+  z-index: 100;
+  /* color: #212529; */
+}
+
+p,
+span {
+  display: inline-block;
+  font-family: var(--font-poppins);
+  font-size: 1.8rem;
+  line-height: 1.8;
+  z-index: 100;
+  /* width: clamp(45ch, 50% 75ch); */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.grid-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 105vh repeat(10, minmax(max-content, 115vh));
+}
+
+.flex-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  /* height: 105vh; */
+  background-color: #123456;
+  position: relative;
+  z-index: 100;
+}
+
+#puzzles path {
+  /*
+  animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+  */
+  transform: translateY(-35%);
+  animation: fallenPuzzels 15s ease calc(var(--order) * 200ms) forwards,
+    whitenPuzzels 1s ease 6s forwards;
+  /* animation-delay: calc(var(--order) * 200ms); */
+}
+
+@keyframes fallenPuzzels {
+  20%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes whitenPuzzels {
+  to {
+    fill: white;
+  }
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.about-section h2 {
+  margin-top: 4rem;
+}
+
+.section-title {
+  position: relative;
+  z-index: 99;
+  background-color: var(--sunglow);
+  text-align: center;
+}
+
+.about-paragraph {
+  max-width: 70%;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-top: 10rem;
+  margin-left: 4rem;
+}
+
+.section-details {
+  background-color: var(--sass);
+  position: relative;
+  z-index: 98;
+  text-align: center;
+}
+
+.projects-section {
+  background-color: var(--node);
+  position: relative;
+  z-index: 95;
+}
+
+.projects-section h2 {
+  font-size: 6rem;
+}
+
+.project-details-section {
+  color: var(--text);
+  position: relative;
+  z-index: 97;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  row-gap: 4rem;
+  position: relative;
+  z-index: 99;
+}
+
+.link-btn {
+  /* color: inherit; */
+  height: 100%;
+  border-radius: 100%;
+  background-color: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.link-btn:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.link-btn span {
+  line-height: 0;
+  font-size: 1.6rem;
+  /* color: #495057; */
+  color: inherit;
+  font-family: var(--font-verela);
+  font-weight: bold;
+  padding: 0.3rem;
+}
+
+.link-btn:hover span {
+  color: #e9ecef;
+}
+
+.link-icon {
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem;
+}
+
+.link-btn:hover .link-icon {
+  fill: #e9ecef;
+}
+
+.omni {
+  background-color: #ff5900;
+}
+
+.omni-btn {
+  color: #ff5900;
+  border: 0.3rem solid currentColor;
+  /* box-shadow: inset 0 0 0 0.3rem currentColor; */
+}
+
+.omni-btn:hover {
+  /*r to l,
+                  t to b,
+                  from centre to edges,
+                  from edges to centre
+                  */
+  box-shadow: inset 12rem 0 0 0 currentColor;
+}
+
+.natours {
+  background-color: var(--yellow-green);
+}
+
+.natours-btn {
+  color: var(--yellow-green);
+  border: 0.3rem solid currentColor;
+}
+
+.natours-btn:hover {
+  box-shadow: inset -12rem 0 0 0 currentColor;
+}
+
+.trillo {
+  background-color: var(--sass);
+}
+
+.trillo-btn {
+  color: var(--sass);
+  border: 0.3rem solid currentColor;
+}
+
+.trillo-btn:hover {
+  box-shadow: inset 12rem 0 0 0 currentColor;
+}
+
+.nextor {
+  background-color: rgb(72, 61, 139);
+}
+
+.nextor-btn {
+  color: rgb(72, 61, 139);
+  border: 0.3rem solid currentColor;
+}
+
+.nextor-btn:hover {
+  box-shadow: inset -12rem 0 0 0 currentColor;
+}
+
+.bankist {
+  background-color: #0b7285;
+}
+
+.bankist-btn {
+  color: #0b7285;
+  border: 0.3rem solid currentColor;
+}
+
+.bankist-btn:hover {
+  box-shadow: inset 12rem 0 0 0 currentColor;
+}
+
+.forkify {
+  background-color: var(--steel-blue);
+}
+
+.forkify-btn {
+  color: var(--steel-blue);
+  border: 0.3rem solid currentColor;
+}
+
+.forkify-btn:hover {
+  box-shadow: inset -12rem 0 0 0 currentColor;
+}
+
+.natours-v2 {
+  background-color: rgb(139, 0, 139);
+}
+
+.natours-v2-btn {
+  color: rgb(139, 0, 139);
+  border: 0.3rem solid currentColor;
+}
+
+.natours-v2-btn:hover {
+  box-shadow: inset 12rem 0 0 0 currentColor;
+}
+
+.project-name {
+  font-size: 3.5rem;
+}
+
+.project-paragraph {
+  text-align: center;
+  padding: 0 8rem;
+  /* margin-top: 4rem; */
+  z-index: 100;
+}
+
+.omni-photo {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 89, 0, 0.4),
+      rgba(255, 89, 0, 0.6)
+    ),
+    url(./img/Omnifood.jpg);
+  background-position: right;
+  background-size: cover;
+
+  position: relative;
+}
+
+.natours-photo {
+  background-image: linear-gradient(
+      to left,
+      rgba(138, 201, 38, 0.4),
+      rgba(138, 201, 38, 0.6)
+    ),
+    url(./img/Natours.jpg);
+  background-position: right;
+  background-size: cover;
+
+  position: relative;
+}
+
+.trillo-photo {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 81, 0.4),
+      rgba(255, 0, 81, 0.6)
+    ),
+    url(./img/Trillo.jpg);
+  background-position: right;
+  background-size: cover;
+
+  position: relative;
+
+}
+
+.nextor-photo {
+  background-image: linear-gradient(
+      to left,
+      rgba(72, 61, 139, 0.4),
+      rgba(72, 61, 139, 0.6)
+    ),
+    url(./img/Nextor.jpg);
+  background-position: left;
+  background-size: cover;
+
+  position: relative;
+}
+
+.bankist-photo {
+  background-image: linear-gradient(
+      to right,
+      rgba(11, 114, 133, 0.4),
+      rgba(11, 114, 133, 0.6)
+    ),
+    url(./img/Bankist.jpg);
+  background-position: right;
+  background-size: cover;
+
+  position: relative;
+
+}
+
+.forkify-photo {
+  background-image: linear-gradient(
+      to left,
+      rgba(25, 130, 196, 0.4),
+      rgba(25, 130, 196, 0.6)
+    ),
+    url(./img/Forkify.jpg);
+  background-position: right;
+  background-size: cover;
+
+  position: relative;
+}
+
+.natours-v2-photo {
+  background-image: linear-gradient(
+      to right,
+      rgba(139, 0, 139, 0.4),
+      rgba(139, 0, 139, 0.6)
+    ),
+    url(./img/Natours-v2.jpg);
+  background-position: center;
+  background-size: cover;
+
+  position: relative;
+
+}
+
+.omni-photo::after,
+.trillo-photo::after,
+.bankist-photo::after,
+.natours-v2-photo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 55%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  background-color: var(--text);
+}
+
+.natours-photo::after,
+.nextor-photo::after,
+.forkify-photo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  background-color: var(--text);
+}
+
+.goals-section {
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  z-index: 97;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer {
+  height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(max-content, 1fr));
+
+}
+
+.contact-me--violet {
+  background-color: var(--ultra-violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 98;
+}
+
+.contact-me--crimson {
+  background-color: crimson;
+  position: relative;
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-nav {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.footer-nav span {
+  color: var(--text);
+  font-size: 1.5rem;
+  transition: all 1s ease;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.nav-icon {
+  fill:  var(--text);;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.4s ease;
+}
+
+.icon-linkedin {
+  border-radius: 100%;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item:hover span {
+  fill:#a6b9c1;
+  color: #a6b9c1;
+}
+/*============================================================*/
+.project-img {
+  max-width: 50%;
+  box-shadow: 0 1.5rem 4rem rgba(119, 119, 119, 0.4);
+  filter: grayscale(1);
+  position: absolute;
+  /* z-index: 10; */
+  transition: all 0.3;
+  outline-offset: 1rem; /* the space between the outline and the imgs*/
+}
+
+.project-img:hover {
+  filter: grayscale(0);
+  outline: 0.8rem solid #123456;
+  transform: scale(1.07) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(119, 119, 119, 0.5);
+  z-index: 20;
+}
+
+.goals-list {
+  margin-left: 6rem;
+}
+
+.list-item {
+  color: #212529;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.list-icon {
+  fill: var(--ultra-violet);
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.2rem;
+}
+
+.list-item span {
+  font-size: 1.8rem;
+}
+
+.icon--1 {
+  animation: rotate 2s linear infinite;
+}
+.icon--2 {
+  animation: rotate 2.3s linear infinite;
+}
+.icon--3 {
+  animation: rotate 2.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
